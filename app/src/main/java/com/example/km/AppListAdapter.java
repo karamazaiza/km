@@ -59,11 +59,10 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.AppViewH
 
         String formattedRating = String.format(Locale.US, "%.1f", currentItem.getRating()) + "★";
         holder.ratingTextView.setText(formattedRating);
-        holder.sizeTextView.setText("• " + currentItem.getSizeMB() + " MB"); // تم تغيير م.ب إلى MB لتكون أقرب للصورة
+        holder.sizeTextView.setText("• " + currentItem.getSizeMB() + " MB");
 
         if (currentItem.hasEvent()) {
             holder.eventBadge.setVisibility(View.VISIBLE);
-            // لعرض النص: "Ends in 6 days"
             holder.eventBadge.setText(" • Event " + currentItem.getEventDetails());
         } else {
             holder.eventBadge.setVisibility(View.GONE);
